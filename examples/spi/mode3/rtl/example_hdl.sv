@@ -1,0 +1,17 @@
+module example_hdl();
+
+
+    logic clk, rst_n;
+
+    spi_if#(.CPOL(1),
+            .MASTER_DRIVE_EDGE(0),
+            .MASTER_SAMPLE_EDGE(1),
+            .SLAVE_DRIVE_EDGE(0),
+            .SLAVE_SAMPLE_EDGE(1),
+            .LSB_FIRST(1),
+            .DATA_WIDTH(32))  spi_if();
+
+    assign spi_if.clk = clk;
+    assign spi_if.rst_n = rst_n;
+
+endmodule : example_hdl
